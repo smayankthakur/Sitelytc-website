@@ -1,0 +1,121 @@
+@theme {
+  --font-sans: var(--font-ibm-plex), "IBM Plex Sans", sans-serif;
+  --font-display: var(--font-montserrat), "Montserrat", sans-serif;
+
+  /* Dark palette used throughout the site */
+  --color-saturn-950: #020617;
+  --color-saturn-900: #0f172a;
+  --color-saturn-800: #1e293b;
+  --color-saturn-700: #334155;
+
+  --color-navy-950: #020617;
+  --color-navy-900: #0f172a;
+  --color-amber: #F59E0B;
+  --color-amber-light: #fbbf24;
+  --color-cobalt: #6366f1;
+  --color-cobalt-light: #818cf8;
+  /* Ketu theme: indigo/cobalt */
+  --color-ketu: #6366f1;
+  --color-ketu-light: #818cf8;
+  /* Staff theme: emerald */
+  --color-staff: #10b981;
+  --color-staff-light: #34d399;
+  --color-sun: #F59E0B;
+}
+
+@import "tailwindcss";
+
+:root {
+  --background: #020617;
+  --foreground: #f1f5f9;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+  }
+
+  .card-hover {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-link {
+    position: relative;
+    transition: color 300ms ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--color-amber);
+    transition: all 300ms ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1e293b, var(--color-amber), #1e293b);
+  background-size: 200% 200%;
+  border-radius: 10px;
+  border: 2px solid #020617;
+  animation: scrollbar-pulse 4s ease infinite;
+}
+
+@keyframes scrollbar-pulse {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 0% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-amber);
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
