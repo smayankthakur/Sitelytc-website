@@ -38,7 +38,7 @@ export default function PortalsPage() {
                 glow: "from-sun/20 to-transparent",
                 iconWrap: "bg-sun/10 border-amber/20 text-sun shadow-[0_0_30px_rgba(245,158,11,0.1)]",
                 tag: "text-sun",
-                btn: "bg-sun hover:shadow-[0_0_30px_rgba(245,158,11,0.4)]",
+                btn: "bg-sun text-saturn-950 hover:shadow-[0_0_30px_rgba(245,158,11,0.4)]",
                 check: "text-sun",
             };
         }
