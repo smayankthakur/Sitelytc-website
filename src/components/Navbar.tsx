@@ -139,7 +139,7 @@ const Navbar = () => {
                                             </p>
                                             {/* Client Logo */}
                                             <div className="mb-4">
-                                                <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-0 h-[250px] w-full flex items-center justify-center">
+                                                <div className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-0 h-[250px] w-full flex items-center justify-center">
                                                     {/* Default: radiant Sun + Ketu glow */}
                                                     <div className="absolute inset-0 scale-125 opacity-80 blur-2xl transition-opacity duration-500 group-hover:opacity-0 logo-glow-sun-ketu" />
                                                     {/* Hover: Saturn + Ketu mix */}

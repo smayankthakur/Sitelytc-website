@@ -43,19 +43,19 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
                     </div>
                     {/* Client Logo */}
                     <div className="mb-8">
-                        <div className="group relative inline-flex overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-0 h-24 w-full max-w-[320px] items-center justify-center">
+                        <div className="group relative inline-flex overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-0 h-36 w-full max-w-[520px] items-center justify-center">
                             {/* Default: radiant Sun + Ketu glow */}
                             <div className="absolute inset-0 scale-125 opacity-80 blur-2xl transition-opacity duration-500 group-hover:opacity-0 logo-glow-sun-ketu" />
                             {/* Hover: Saturn + Ketu mix */}
                             <div className="absolute inset-0 scale-125 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100 logo-glow-saturn-ketu" />
                             <div className="absolute inset-0 bg-white/[0.02]" />
-                            <div className="absolute inset-0 z-10 p-5">
+                            <div className="absolute inset-0 z-10 p-10">
                                 <div className="relative w-full h-full">
                                     <Image
                                         src={study.clientLogo}
                                         alt={`${study.clientName} Logo`}
                                         fill
-                                        sizes="320px"
+                                        sizes="(min-width: 1024px) 520px, 90vw"
                                         className="object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                                     />
                                 </div>
