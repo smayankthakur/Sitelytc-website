@@ -159,14 +159,14 @@ const Navbar = () => {
                                                 </div>
                                             </div>
                                             <div className="mt-auto">
-                                                <Link
+                                                <a
                                                     href={`https://${activeClient?.slug}.sitelytc.com`}
                                                     className="inline-flex items-center gap-2 px-6 py-2.5 bg-amber text-navy-950 rounded-xl font-bold text-xs hover:bg-amber-light transition-all transform hover:scale-105"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
                                                     View Case Study <ArrowRight className="w-3 h-3" />
-                                                </Link>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

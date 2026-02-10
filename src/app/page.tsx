@@ -131,14 +131,14 @@ export default function Home() {
                         </div>
                       ))}
                     </div>
-                  <Link
-                      href={`https://${primaryStudy.slug}.sitelytc.com`}
-                      className="inline-flex items-center gap-3 text-sun font-black group-hover:gap-6 transition-all text-lg"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  <a
+                    href={`https://${primaryStudy.slug}.sitelytc.com`}
+                    className="inline-flex items-center gap-3 text-sun font-black group-hover:gap-6 transition-all text-lg"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Explore Case Study <ArrowRight className="w-6 h-6" />
-                  </Link>
+                  </a>
                   </div>
                 </div>
               </div>
@@ -160,14 +160,14 @@ export default function Home() {
                 <div className="p-10 flex-grow flex flex-col">
                   <h4 className="text-2xl font-bold text-white mb-2">{study.clientName}</h4>
                   <p className="text-slate-400 text-sm mb-8 font-medium tracking-wide">{study.category}</p>
-                  <Link
+                  <a
                     href={`https://${study.slug}.sitelytc.com`}
                     className="mt-auto inline-flex items-center gap-2 text-sun font-bold group-hover:gap-4 transition-all"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     View Project <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
