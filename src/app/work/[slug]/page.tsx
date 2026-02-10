@@ -49,13 +49,17 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
                             {/* Hover: Saturn + Ketu mix */}
                             <div className="absolute inset-0 scale-125 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100 logo-glow-saturn-ketu" />
                             <div className="absolute inset-0 bg-white/[0.02]" />
-                            <Image
-                                src={study.clientLogo}
-                                alt={`${study.clientName} Logo`}
-                                fill
-                                sizes="320px"
-                                className="relative z-10 object-contain opacity-90 group-hover:opacity-100 transition-opacity p-3"
-                            />
+                            <div className="absolute inset-0 z-10 p-5">
+                                <div className="relative w-full h-full">
+                                    <Image
+                                        src={study.clientLogo}
+                                        alt={`${study.clientName} Logo`}
+                                        fill
+                                        sizes="320px"
+                                        className="object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <h1 className="text-5xl md:text-7xl font-display font-black text-white mb-8 leading-tight">

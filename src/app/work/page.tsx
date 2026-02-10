@@ -83,13 +83,17 @@ export default function WorkPage() {
                                             {/* Hover: Saturn + Ketu mix */}
                                             <div className="absolute inset-0 scale-125 opacity-0 blur-2xl transition-opacity duration-500 group-hover/logo:opacity-100 logo-glow-saturn-ketu" />
                                             <div className="absolute inset-0 bg-white/[0.02]" />
-                                            <Image
-                                                src={study.clientLogo}
-                                                alt={`${study.clientName} Logo`}
-                                                fill
-                                                sizes="280px"
-                                                className="relative z-10 object-contain opacity-90 group-hover/logo:opacity-100 transition-opacity p-3"
-                                            />
+                                            <div className="absolute inset-0 z-10 p-5">
+                                                <div className="relative w-full h-full">
+                                                    <Image
+                                                        src={study.clientLogo}
+                                                        alt={`${study.clientName} Logo`}
+                                                        fill
+                                                        sizes="280px"
+                                                        className="object-contain opacity-90 group-hover/logo:opacity-100 transition-opacity"
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="absolute bottom-6 right-6 w-10 h-10 bg-sun text-saturn-950 rounded-full flex items-center justify-center translate-y-20 group-hover:translate-y-0 transition-transform duration-500 shadow-xl">

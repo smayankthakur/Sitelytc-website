@@ -93,13 +93,17 @@ const Navbar = () => {
                                                 {/* Hover: Saturn + Ketu mix */}
                                                 <div className="absolute inset-0 scale-125 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100 logo-glow-saturn-ketu" />
                                                 <div className="absolute inset-0 bg-white/[0.02]" />
-                                                <Image
-                                                    src={cs.clientLogo}
-                                                    alt={`${cs.clientName} logo`}
-                                                    fill
-                                                    sizes="(min-width: 1024px) 220px, 40vw"
-                                                    className="relative z-10 object-contain opacity-90 group-hover:opacity-100 transition-opacity p-2"
-                                                />
+                                                <div className="absolute inset-0 z-10 p-2">
+                                                    <div className="relative w-full h-full">
+                                                        <Image
+                                                            src={cs.clientLogo}
+                                                            alt={`${cs.clientName} logo`}
+                                                            fill
+                                                            sizes="(min-width: 1024px) 220px, 40vw"
+                                                            className="object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                                                        />
+                                                    </div>
+                                                </div>
                                             </div>
                                         ))}
                                         <Link href="/work" className="col-span-2 mt-4 flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-white transition-colors group/link">
@@ -141,13 +145,17 @@ const Navbar = () => {
                                                     {/* Hover: Saturn + Ketu mix */}
                                                     <div className="absolute inset-0 scale-125 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100 logo-glow-saturn-ketu" />
                                                     <div className="absolute inset-0 bg-white/[0.02]" />
-                                                    <Image
-                                                        src={activeClient?.clientLogo || "/logo.png"}
-                                                        alt={`${activeClient?.clientName} Logo`}
-                                                        fill
-                                                        sizes="(min-width: 1024px) 400px, 80vw"
-                                                        className="relative z-10 object-contain opacity-90 group-hover:opacity-100 transition-opacity p-8"
-                                                    />
+                                                    <div className="absolute inset-0 z-10 p-10">
+                                                        <div className="relative w-full h-full">
+                                                            <Image
+                                                                src={activeClient?.clientLogo || "/logo.png"}
+                                                                alt={`${activeClient?.clientName} Logo`}
+                                                                fill
+                                                                sizes="(min-width: 1024px) 400px, 80vw"
+                                                                className="object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                                                            />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div className="mt-auto">
