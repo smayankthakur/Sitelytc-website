@@ -49,3 +49,6 @@ full_build.log
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# stray nested repo folder (contains only its own .git metadata in this workspace)
+Sitelytc/
