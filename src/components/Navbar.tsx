@@ -85,15 +85,20 @@ const Navbar = () => {
                                             <div
                                                 key={cs.slug}
                                                 onMouseEnter={() => setActiveClient(cs)}
-                                                className={`p-4 rounded-xl border border-white/5 bg-white/5 cursor-pointer transition-all duration-300 flex items-center justify-center hover:scale-105 hover:border-amber/40 hover:shadow-[0_0_20px_rgba(245,158,11,0.1)] ${activeClient?.slug === cs.slug ? "border-amber bg-amber/10 scale-105 shadow-[0_0_20px_rgba(245,158,11,0.2)]" : ""
+                                                className={`group relative overflow-hidden p-4 rounded-xl border border-white/5 bg-white/5 cursor-pointer transition-all duration-300 flex items-center justify-center hover:scale-105 hover:border-amber/40 hover:shadow-[0_0_20px_rgba(245,158,11,0.1)] ${activeClient?.slug === cs.slug ? "border-amber bg-amber/10 scale-105 shadow-[0_0_20px_rgba(245,158,11,0.2)]" : ""
                                                     }`}
                                             >
+                                                {/* Default: radiant Sun + Ketu glow */}
+                                                <div className="absolute -inset-10 opacity-80 blur-2xl transition-opacity duration-500 group-hover:opacity-0 bg-[radial-gradient(circle_at_25%_25%,rgba(245,158,11,0.35),transparent_60%),radial-gradient(circle_at_80%_75%,rgba(99,102,241,0.28),transparent_60%)]" />
+                                                {/* Hover: Saturn + Ketu mix */}
+                                                <div className="absolute -inset-10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_25%_25%,rgba(2,6,23,0.95),transparent_62%),radial-gradient(circle_at_80%_75%,rgba(99,102,241,0.32),transparent_62%)]" />
+                                                <div className="absolute inset-0 bg-white/[0.02]" />
                                                 <Image
                                                     src={cs.clientLogo}
                                                     alt={`${cs.clientName} logo`}
                                                     width={140}
                                                     height={48}
-                                                    className="h-8 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                                                    className="relative z-10 h-8 w-auto object-contain opacity-85 group-hover:opacity-100 transition-opacity"
                                                 />
                                             </div>
                                         ))}
