@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     const dynamicRoutes: MetadataRoute.Sitemap = caseStudies.map((study) => ({
-        url: `${baseUrl}/work/${study.slug}`,
+        url: `https://${study.slug}.sitelytc.com`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 0.7,

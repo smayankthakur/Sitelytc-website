@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { caseStudies } from "@/content/case-studies";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, CheckCircle2, Clock, Lightbulb, TrendingUp, Presentation, Layers } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Clock, Lightbulb, TrendingUp, Presentation, Layers, ExternalLink } from "lucide-react";
 
 export default function WorkDetail({ params }: { params: { slug: string } }) {
     const study = caseStudies.find((cs) => cs.slug === params.slug);
@@ -31,15 +31,30 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
                             {study.industry}
                         </span>
                     </div>
+                    <div className="mb-6">
+                        <a
+                            href={`https://${study.slug}.sitelytc.com`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-white/10 bg-white/5 text-white font-bold hover:bg-white/10 hover:border-white/20 transition-all"
+                        >
+                            Open Client Portal <ExternalLink className="w-4 h-4" />
+                        </a>
+                    </div>
                     {/* Client Logo */}
                     <div className="mb-8">
-                        <div className="relative h-24 w-auto">
+                        <div className="group relative inline-flex overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-0 h-24 w-full max-w-[320px] items-center justify-center">
+                            {/* Default: radiant Sun + Ketu glow */}
+                            <div className="absolute inset-0 scale-125 opacity-80 blur-2xl transition-opacity duration-500 group-hover:opacity-0 logo-glow-sun-ketu" />
+                            {/* Hover: Saturn + Ketu mix */}
+                            <div className="absolute inset-0 scale-125 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100 logo-glow-saturn-ketu" />
+                            <div className="absolute inset-0 bg-white/[0.02]" />
                             <Image
                                 src={study.clientLogo}
                                 alt={`${study.clientName} Logo`}
-                                width={240}
-                                height={96}
-                                className="h-full w-auto object-contain"
+                                fill
+                                sizes="320px"
+                                className="relative z-10 object-contain opacity-90 group-hover:opacity-100 transition-opacity p-3"
                             />
                         </div>
                     </div>

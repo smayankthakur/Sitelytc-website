@@ -45,6 +45,18 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  .logo-glow-sun-ketu {
+    background:
+      radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.35), transparent 60%),
+      radial-gradient(circle at 80% 75%, rgba(99, 102, 241, 0.28), transparent 60%);
+  }
+
+  .logo-glow-saturn-ketu {
+    background:
+      radial-gradient(circle at 25% 25%, rgba(2, 6, 23, 0.95), transparent 62%),
+      radial-gradient(circle at 80% 75%, rgba(99, 102, 241, 0.32), transparent 62%);
+  }
+
   .hero-glow {
     background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
   }

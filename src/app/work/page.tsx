@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { caseStudies } from "@/content/case-studies";
 import { Search, ArrowRight } from "lucide-react";
@@ -64,42 +63,53 @@ export default function WorkPage() {
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredWork.map((study) => (
-                        <Link
+                        <div
                             key={study.slug}
-                            href={`/work/${study.slug}`}
-                            className="glass rounded-[2.5rem] overflow-hidden group border border-white/5 flex flex-col hover:-translate-y-2 transition-all duration-500"
+                            className="glass rounded-[2.5rem] overflow-hidden group border border-white/5 flex flex-col hover:-translate-y-2 transition-all duration-500 relative"
                         >
-                            <div className="h-64 bg-navy-800/50 flex items-center justify-center relative overflow-hidden p-12">
-                                <div className="absolute inset-0 bg-gradient-to-t from-saturn-950/80 to-transparent opacity-50"></div>
-                                {/* Client Logo */}
-                                <div className="relative z-10 w-full h-full flex items-center justify-center">
-                                    <div className="relative h-24 w-auto">
-                                        <Image
-                                            src={study.clientLogo}
-                                            alt={`${study.clientName} Logo`}
-                                            width={200}
-                                            height={96}
-                                            className="h-full w-auto object-contain"
-                                        />
+                            <a
+                                href={`https://${study.slug}.sitelytc.com`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block h-full"
+                            >
+                                <div className="h-64 bg-navy-800/50 flex items-center justify-center relative overflow-hidden p-12">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-saturn-950/80 to-transparent opacity-50"></div>
+                                    {/* Client Logo */}
+                                    <div className="relative z-10 w-full h-full flex items-center justify-center">
+                                        <div className="group/logo relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-0 h-24 w-full max-w-[280px] flex items-center justify-center">
+                                            {/* Default: radiant Sun + Ketu glow */}
+                                            <div className="absolute inset-0 scale-125 opacity-80 blur-2xl transition-opacity duration-500 group-hover/logo:opacity-0 logo-glow-sun-ketu" />
+                                            {/* Hover: Saturn + Ketu mix */}
+                                            <div className="absolute inset-0 scale-125 opacity-0 blur-2xl transition-opacity duration-500 group-hover/logo:opacity-100 logo-glow-saturn-ketu" />
+                                            <div className="absolute inset-0 bg-white/[0.02]" />
+                                            <Image
+                                                src={study.clientLogo}
+                                                alt={`${study.clientName} Logo`}
+                                                fill
+                                                sizes="280px"
+                                                className="relative z-10 object-contain opacity-90 group-hover/logo:opacity-100 transition-opacity p-3"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="absolute bottom-6 right-6 w-10 h-10 bg-sun text-saturn-950 rounded-full flex items-center justify-center translate-y-20 group-hover:translate-y-0 transition-transform duration-500 shadow-xl">
+                                        <ArrowRight className="w-5 h-5" />
                                     </div>
                                 </div>
-                                <div className="absolute bottom-6 right-6 w-10 h-10 bg-sun text-saturn-950 rounded-full flex items-center justify-center translate-y-20 group-hover:translate-y-0 transition-transform duration-500 shadow-xl">
-                                    <ArrowRight className="w-5 h-5" />
+                                <div className="p-10 flex-grow flex flex-col">
+                                    <div className="flex justify-between items-start mb-4">
+                                        <h4 className="text-2xl font-bold text-white group-hover:text-sun transition-colors leading-tight">{study.clientName}</h4>
+                                    </div>
+                                    <p className="text-sun text-[10px] font-black uppercase tracking-widest mb-4">{study.category}</p>
+                                    <p className="text-slate-400 text-sm font-light leading-relaxed mb-8 line-clamp-2 italic">
+                                        "{study.results[0]}"
+                                    </p>
+                                    <div className="mt-auto flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+                                        Deep Dive <ArrowRight className="w-4 h-4 text-sun" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="p-10 flex-grow flex flex-col">
-                                <div className="flex justify-between items-start mb-4">
-                                    <h4 className="text-2xl font-bold text-white group-hover:text-sun transition-colors leading-tight">{study.clientName}</h4>
-                                </div>
-                                <p className="text-sun text-[10px] font-black uppercase tracking-widest mb-4">{study.category}</p>
-                                <p className="text-slate-400 text-sm font-light leading-relaxed mb-8 line-clamp-2 italic">
-                                    "{study.results[0]}"
-                                </p>
-                                <div className="mt-auto flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
-                                    Deep Dive <ArrowRight className="w-4 h-4 text-sun" />
-                                </div>
-                            </div>
-                        </Link>
+                            </a>
+                        </div>
                     ))}
                 </div>
 
