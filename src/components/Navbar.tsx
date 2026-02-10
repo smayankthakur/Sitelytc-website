@@ -135,7 +135,7 @@ const Navbar = () => {
                                             </p>
                                             {/* Client Logo */}
                                             <div className="mb-4">
-                                                <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-0 h-12 w-full max-w-[240px] flex items-center justify-center">
+                                                <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-0 h-[250px] w-full flex items-center justify-center">
                                                     {/* Default: radiant Sun + Ketu glow */}
                                                     <div className="absolute inset-0 scale-125 opacity-80 blur-2xl transition-opacity duration-500 group-hover:opacity-0 logo-glow-sun-ketu" />
                                                     {/* Hover: Saturn + Ketu mix */}
@@ -145,8 +145,8 @@ const Navbar = () => {
                                                         src={activeClient?.clientLogo || "/logo.png"}
                                                         alt={`${activeClient?.clientName} Logo`}
                                                         fill
-                                                        sizes="240px"
-                                                        className="relative z-10 object-contain opacity-90 group-hover:opacity-100 transition-opacity p-2"
+                                                        sizes="(min-width: 1024px) 400px, 80vw"
+                                                        className="relative z-10 object-contain opacity-90 group-hover:opacity-100 transition-opacity p-8"
                                                     />
                                                 </div>
                                             </div>
